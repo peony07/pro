@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sc.pro.business.dao.ArchDicItemMapper" >
+  <resultMap id="BaseResultMap" type="com.sc.pro.business.model.ArchDicItemVO" >
+    <id column="RID" property="rid" jdbcType="VARCHAR" />
+    <result column="KIND" property="kind" jdbcType="VARCHAR" />
+    <result column="CODE" property="code" jdbcType="VARCHAR" />
+    <result column="PARENT_ID" property="parentId" jdbcType="VARCHAR" />
+    <result column="DETAIL" property="detail" jdbcType="VARCHAR" />
+    <result column="SPELL" property="spell" jdbcType="VARCHAR" />
+    <result column="WHOLE_SPELL" property="wholeSpell" jdbcType="VARCHAR" />
+    <result column="REMARK" property="remark" jdbcType="VARCHAR" />
+    <result column="SORT" property="sort" jdbcType="BIGINT" />
+    <result column="FLAG" property="flag" jdbcType="VARCHAR" />
+    <result column="CREATED_BY" property="createdBy" jdbcType="VARCHAR" />
+    <result column="LAST_UPDATED_BY" property="lastUpdatedBy" jdbcType="VARCHAR" />
+    <result column="CREATED_DATE" property="createdDate" jdbcType="TIMESTAMP" />
+    <result column="LAST_UPDATED_DATE" property="lastUpdatedDate" jdbcType="TIMESTAMP" />
+    <result column="CUST_TEXT01" property="custText01" jdbcType="VARCHAR" />
+    <result column="CUST_TEXT02" property="custText02" jdbcType="VARCHAR" />
+    <result column="CUST_TEXT03" property="custText03" jdbcType="VARCHAR" />
+    <result column="CUST_TEXT04" property="custText04" jdbcType="VARCHAR" />
+    <result column="CUST_TEXT05" property="custText05" jdbcType="VARCHAR" />
+    <result column="CUST_TEXT06" property="custText06" jdbcType="VARCHAR" />
+    <result column="CUST_TEXT07" property="custText07" jdbcType="VARCHAR" />
+    <result column="CUST_TEXT08" property="custText08" jdbcType="VARCHAR" />
+    <result column="CUST_TEXT09" property="custText09" jdbcType="VARCHAR" />
+    <result column="CUST_TEXT10" property="custText10" jdbcType="VARCHAR" />
+    <result column="CUST_TEXT11" property="custText11" jdbcType="VARCHAR" />
+    <result column="CUST_TEXT12" property="custText12" jdbcType="VARCHAR" />
+    <result column="CUST_TEXT13" property="custText13" jdbcType="VARCHAR" />
+    <result column="CUST_TEXT14" property="custText14" jdbcType="VARCHAR" />
+    <result column="CUST_NUMBER01" property="custNumber01" jdbcType="BIGINT" />
+    <result column="CUST_NUMBER02" property="custNumber02" jdbcType="BIGINT" />
+    <result column="CUST_NUMBER03" property="custNumber03" jdbcType="BIGINT" />
+    <result column="CUST_NUMBER04" property="custNumber04" jdbcType="BIGINT" />
+    <result column="CUST_NUMBER05" property="custNumber05" jdbcType="BIGINT" />
+    <result column="CUST_NUMBER06" property="custNumber06" jdbcType="BIGINT" />
+    <result column="CUST_NUMBER07" property="custNumber07" jdbcType="BIGINT" />
+    <result column="CUST_DATE01" property="custDate01" jdbcType="TIMESTAMP" />
+    <result column="CUST_DATE02" property="custDate02" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from arch_dic_item
+    where RID = #{rid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.sc.pro.business.model.ArchDicItemVO" >
+    insert into arch_dic_item (RID, KIND, CODE, 
+      PARENT_ID, DETAIL, SPELL, 
+      WHOLE_SPELL, REMARK, SORT, 
+      FLAG, CREATED_BY, LAST_UPDATED_BY, 
+      CREATED_DATE, LAST_UPDATED_DATE, CUST_TEXT01, 
+      CUST_TEXT02, CUST_TEXT03, CUST_TEXT04, 
+      CUST_TEXT05, CUST_TEXT06, CUST_TEXT07, 
+      CUST_TEXT08, CUST_TEXT09, CUST_TEXT10, 
+      CUST_TEXT11, CUST_TEXT12, CUST_TEXT13, 
+      CUST_TEXT14, CUST_NUMBER01, CUST_NUMBER02, 
+      CUST_NUMBER03, CUST_NUMBER04, CUST_NUMBER05, 
+      CUST_NUMBER06, CUST_NUMBER07, CUST_DATE01, 
+      CUST_DATE02)
+    values (#{rid,jdbcType=VARCHAR}, #{kind,jdbcType=VARCHAR}, #{code,jdbcType=VARCHAR}, 
+      #{parentId,jdbcType=VARCHAR}, #{detail,jdbcType=VARCHAR}, #{spell,jdbcType=VARCHAR}, 
+      #{wholeSpell,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, #{sort,jdbcType=BIGINT}, 
+      #{flag,jdbcType=VARCHAR}, #{createdBy,jdbcType=VARCHAR}, #{lastUpdatedBy,jdbcType=VARCHAR}, 
+      #{createdDate,jdbcType=TIMESTAMP}, #{lastUpdatedDate,jdbcType=TIMESTAMP}, #{custText01,jdbcType=VARCHAR}, 
+      #{custText02,jdbcType=VARCHAR}, #{custText03,jdbcType=VARCHAR}, #{custText04,jdbcType=VARCHAR}, 
+      #{custText05,jdbcType=VARCHAR}, #{custText06,jdbcType=VARCHAR}, #{custText07,jdbcType=VARCHAR}, 
+      #{custText08,jdbcType=VARCHAR}, #{custText09,jdbcType=VARCHAR}, #{custText10,jdbcType=VARCHAR}, 
+      #{custText11,jdbcType=VARCHAR}, #{custText12,jdbcType=VARCHAR}, #{custText13,jdbcType=VARCHAR}, 
+      #{custText14,jdbcType=VARCHAR}, #{custNumber01,jdbcType=BIGINT}, #{custNumber02,jdbcType=BIGINT}, 
+      #{custNumber03,jdbcType=BIGINT}, #{custNumber04,jdbcType=BIGINT}, #{custNumber05,jdbcType=BIGINT}, 
+      #{custNumber06,jdbcType=BIGINT}, #{custNumber07,jdbcType=BIGINT}, #{custDate01,jdbcType=TIMESTAMP}, 
+      #{custDate02,jdbcType=TIMESTAMP})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.sc.pro.business.model.ArchDicItemVO" >
+    update arch_dic_item
+    set KIND = #{kind,jdbcType=VARCHAR},
+      CODE = #{code,jdbcType=VARCHAR},
+      PARENT_ID = #{parentId,jdbcType=VARCHAR},
+      DETAIL = #{detail,jdbcType=VARCHAR},
+      SPELL = #{spell,jdbcType=VARCHAR},
+      WHOLE_SPELL = #{wholeSpell,jdbcType=VARCHAR},
+      REMARK = #{remark,jdbcType=VARCHAR},
+      SORT = #{sort,jdbcType=BIGINT},
+      FLAG = #{flag,jdbcType=VARCHAR},
+      CREATED_BY = #{createdBy,jdbcType=VARCHAR},
+      LAST_UPDATED_BY = #{lastUpdatedBy,jdbcType=VARCHAR},
+      CREATED_DATE = #{createdDate,jdbcType=TIMESTAMP},
+      LAST_UPDATED_DATE = #{lastUpdatedDate,jdbcType=TIMESTAMP},
+      CUST_TEXT01 = #{custText01,jdbcType=VARCHAR},
+      CUST_TEXT02 = #{custText02,jdbcType=VARCHAR},
+      CUST_TEXT03 = #{custText03,jdbcType=VARCHAR},
+      CUST_TEXT04 = #{custText04,jdbcType=VARCHAR},
+      CUST_TEXT05 = #{custText05,jdbcType=VARCHAR},
+      CUST_TEXT06 = #{custText06,jdbcType=VARCHAR},
+      CUST_TEXT07 = #{custText07,jdbcType=VARCHAR},
+      CUST_TEXT08 = #{custText08,jdbcType=VARCHAR},
+      CUST_TEXT09 = #{custText09,jdbcType=VARCHAR},
+      CUST_TEXT10 = #{custText10,jdbcType=VARCHAR},
+      CUST_TEXT11 = #{custText11,jdbcType=VARCHAR},
+      CUST_TEXT12 = #{custText12,jdbcType=VARCHAR},
+      CUST_TEXT13 = #{custText13,jdbcType=VARCHAR},
+      CUST_TEXT14 = #{custText14,jdbcType=VARCHAR},
+      CUST_NUMBER01 = #{custNumber01,jdbcType=BIGINT},
+      CUST_NUMBER02 = #{custNumber02,jdbcType=BIGINT},
+      CUST_NUMBER03 = #{custNumber03,jdbcType=BIGINT},
+      CUST_NUMBER04 = #{custNumber04,jdbcType=BIGINT},
+      CUST_NUMBER05 = #{custNumber05,jdbcType=BIGINT},
+      CUST_NUMBER06 = #{custNumber06,jdbcType=BIGINT},
+      CUST_NUMBER07 = #{custNumber07,jdbcType=BIGINT},
+      CUST_DATE01 = #{custDate01,jdbcType=TIMESTAMP},
+      CUST_DATE02 = #{custDate02,jdbcType=TIMESTAMP}
+    where RID = #{rid,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select RID, KIND, CODE, PARENT_ID, DETAIL, SPELL, WHOLE_SPELL, REMARK, SORT, FLAG, 
+    CREATED_BY, LAST_UPDATED_BY, CREATED_DATE, LAST_UPDATED_DATE, CUST_TEXT01, CUST_TEXT02, 
+    CUST_TEXT03, CUST_TEXT04, CUST_TEXT05, CUST_TEXT06, CUST_TEXT07, CUST_TEXT08, CUST_TEXT09, 
+    CUST_TEXT10, CUST_TEXT11, CUST_TEXT12, CUST_TEXT13, CUST_TEXT14, CUST_NUMBER01, CUST_NUMBER02, 
+    CUST_NUMBER03, CUST_NUMBER04, CUST_NUMBER05, CUST_NUMBER06, CUST_NUMBER07, CUST_DATE01, 
+    CUST_DATE02
+    from arch_dic_item
+    where RID = #{rid,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select RID, KIND, CODE, PARENT_ID, DETAIL, SPELL, WHOLE_SPELL, REMARK, SORT, FLAG, 
+    CREATED_BY, LAST_UPDATED_BY, CREATED_DATE, LAST_UPDATED_DATE, CUST_TEXT01, CUST_TEXT02, 
+    CUST_TEXT03, CUST_TEXT04, CUST_TEXT05, CUST_TEXT06, CUST_TEXT07, CUST_TEXT08, CUST_TEXT09, 
+    CUST_TEXT10, CUST_TEXT11, CUST_TEXT12, CUST_TEXT13, CUST_TEXT14, CUST_NUMBER01, CUST_NUMBER02, 
+    CUST_NUMBER03, CUST_NUMBER04, CUST_NUMBER05, CUST_NUMBER06, CUST_NUMBER07, CUST_DATE01, 
+    CUST_DATE02
+    from arch_dic_item
+  </select>
+  
+  <select id="getList"  parameterType="com.sc.pro.business.model.ArchDicItemVO"  resultMap="BaseResultMap" >
+    select RID, KIND, CODE, PARENT_ID, DETAIL, SPELL, WHOLE_SPELL, REMARK, SORT, FLAG, 
+    CREATED_BY, LAST_UPDATED_BY, CREATED_DATE, LAST_UPDATED_DATE, CUST_TEXT01, CUST_TEXT02, 
+    CUST_TEXT03, CUST_TEXT04, CUST_TEXT05, CUST_TEXT06, CUST_TEXT07, CUST_TEXT08, CUST_TEXT09, 
+    CUST_TEXT10, CUST_TEXT11, CUST_TEXT12, CUST_TEXT13, CUST_TEXT14, CUST_NUMBER01, CUST_NUMBER02, 
+    CUST_NUMBER03, CUST_NUMBER04, CUST_NUMBER05, CUST_NUMBER06, CUST_NUMBER07, CUST_DATE01, 
+    CUST_DATE02
+    from arch_dic_item
+    <where>
+    	    <if test="null!=kind and ''!=kind">
+    	    	and kind=#{kind} 
+    	    </if>
+    	     <if test="null!=code and ''!=code">
+    	    	and code=#{code} 
+    	    </if>
+    	    <if test="null!=flag and ''!=flag">
+    	    	and flag=#{flag} 
+    	    </if>
+    	    <if test="null!=detail and ''!=detail">
+    	    	and detail like  concat('%', #{detail},'%')
+    	    </if>
+    	 </where>
+  </select>
+</mapper>

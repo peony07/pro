@@ -1,0 +1,58 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+ <parent>  
+  	<groupId>com.sc.project</groupId>
+  	<artifactId>pro-parent</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+   </parent>
+  
+  <modelVersion>4.0.0</modelVersion>
+
+  <artifactId>pro-common</artifactId>
+  <packaging>jar</packaging>
+  <name>pro-common</name>
+  <description>项目描述</description>
+
+   <dependencies>
+
+   	<!-- junit -->
+    <dependency>
+	   <groupId>junit</groupId>
+	   <artifactId>junit</artifactId>
+   </dependency>
+
+      <!-- commons -->
+	<dependency>
+		<groupId>commons-logging</groupId>
+		<artifactId>commons-logging</artifactId>
+	</dependency>
+
+	<dependency>
+		<groupId>commons-io</groupId>
+		<artifactId>commons-io</artifactId>
+	</dependency>
+
+	<!-- log4j -->
+	<dependency>
+		<groupId>log4j</groupId>
+		<artifactId>log4j</artifactId>
+	</dependency>
+
+	<dependency>
+		<groupId>org.slf4j</groupId>
+		<artifactId>slf4j-api</artifactId>
+	</dependency>
+
+	<dependency>
+		<groupId>org.slf4j</groupId>
+		<artifactId>slf4j-log4j12</artifactId>
+	</dependency>
+
+   <dependency>
+		<groupId>net.sf.json-lib</groupId>
+		<artifactId>json-lib</artifactId>
+		<classifier>jdk15</classifier>
+	</dependency>
+	
+  </dependencies>
+</project>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="pro-api-impl"
+  id="myeclipse.1447160751774"
+  context-root="/pro-api-impl"
+  j2ee-spec="1.7"
+  archive="pro-api-impl.war">
+  <attributes>
+    <attribute name="webrootdir" value="src/main/webapp" />
+  </attributes>
+</project-module>
+
