@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sc.pro.business.dao.SohoServiceConfigMapper" >
+  <resultMap id="BaseResultMap" type="com.sc.pro.business.model.SohoServiceConfigVO" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="service_code" property="serviceCode" jdbcType="VARCHAR" />
+    <result column="service_name" property="serviceName" jdbcType="VARCHAR" />
+    <result column="service_type" property="serviceType" jdbcType="VARCHAR" />
+    <result column="service_auth" property="serviceAuth" jdbcType="VARCHAR" />
+    <result column="service_enabled" property="serviceEnabled" jdbcType="VARCHAR" />
+    <result column="service_param" property="serviceParam" jdbcType="VARCHAR" />
+    <result column="return_type" property="returnType" jdbcType="VARCHAR" />
+    <result column="read_only" property="readOnly" jdbcType="VARCHAR" />
+    <result column="sub_query" property="subQuery" jdbcType="VARCHAR" />
+    <result column="mult_lang_field" property="multLangField" jdbcType="VARCHAR" />
+    <result column="service_content" property="serviceContent" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from soho_service_config
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.sc.pro.business.model.SohoServiceConfigVO" >
+    insert into soho_service_config (id, service_code, service_name, 
+      service_type, service_auth, service_enabled, 
+      service_param, return_type, read_only, 
+      sub_query, mult_lang_field, service_content
+      )
+    values (#{id,jdbcType=VARCHAR}, #{serviceCode,jdbcType=VARCHAR}, #{serviceName,jdbcType=VARCHAR}, 
+      #{serviceType,jdbcType=VARCHAR}, #{serviceAuth,jdbcType=VARCHAR}, #{serviceEnabled,jdbcType=VARCHAR}, 
+      #{serviceParam,jdbcType=VARCHAR}, #{returnType,jdbcType=VARCHAR}, #{readOnly,jdbcType=VARCHAR}, 
+      #{subQuery,jdbcType=VARCHAR}, #{multLangField,jdbcType=VARCHAR}, #{serviceContent,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.sc.pro.business.model.SohoServiceConfigVO" >
+    update soho_service_config
+    set service_code = #{serviceCode,jdbcType=VARCHAR},
+      service_name = #{serviceName,jdbcType=VARCHAR},
+      service_type = #{serviceType,jdbcType=VARCHAR},
+      service_auth = #{serviceAuth,jdbcType=VARCHAR},
+      service_enabled = #{serviceEnabled,jdbcType=VARCHAR},
+      service_param = #{serviceParam,jdbcType=VARCHAR},
+      return_type = #{returnType,jdbcType=VARCHAR},
+      read_only = #{readOnly,jdbcType=VARCHAR},
+      sub_query = #{subQuery,jdbcType=VARCHAR},
+      mult_lang_field = #{multLangField,jdbcType=VARCHAR},
+      service_content = #{serviceContent,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select id, service_code, service_name, service_type, service_auth, service_enabled, 
+    service_param, return_type, read_only, sub_query, mult_lang_field, service_content
+    from soho_service_config
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select id, service_code, service_name, service_type, service_auth, service_enabled, 
+    service_param, return_type, read_only, sub_query, mult_lang_field, service_content
+    from soho_service_config
+  </select>
+  
+    <select id="findServerByCode" parameterType="com.sc.pro.business.model.SohoServiceConfigVO" resultMap="BaseResultMap" >
+    select id, service_code, service_name, service_type, service_auth, service_enabled, 
+    service_param, return_type, read_only, sub_query, mult_lang_field, service_content
+    from soho_service_config where service_code=#{serviceCode} and service_auth=#{serviceAuth}
+  </select>
+  
+  
+</mapper>

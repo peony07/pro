@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sc.pro.business.dao.SohoMultLangMapper" >
+  <resultMap id="BaseResultMap" type="com.sc.pro.business.model.SohoMultLangVO" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="code" property="code" jdbcType="VARCHAR" />
+    <result column="lang" property="lang" jdbcType="VARCHAR" />
+    <result column="business_id" property="businessId" jdbcType="VARCHAR" />
+    <result column="business_field" property="businessField" jdbcType="VARCHAR" />
+    <result column="model_name" property="modelName" jdbcType="VARCHAR" />
+    <result column="context" property="context" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from soho_mult_lang
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.sc.pro.business.model.SohoMultLangVO" >
+    insert into soho_mult_lang (id, code, lang, 
+      business_id, business_field, model_name, 
+      context)
+    values (#{id,jdbcType=VARCHAR}, #{code,jdbcType=VARCHAR}, #{lang,jdbcType=VARCHAR}, 
+      #{businessId,jdbcType=VARCHAR}, #{businessField,jdbcType=VARCHAR}, #{modelName,jdbcType=VARCHAR}, 
+      #{context,jdbcType=LONGVARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.sc.pro.business.model.SohoMultLangVO" >
+    update soho_mult_lang
+    set code = #{code,jdbcType=VARCHAR},
+      lang = #{lang,jdbcType=VARCHAR},
+      business_id = #{businessId,jdbcType=VARCHAR},
+      business_field = #{businessField,jdbcType=VARCHAR},
+      model_name = #{modelName,jdbcType=VARCHAR},
+      context = #{context,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select id, code, lang, business_id, business_field, model_name, context
+    from soho_mult_lang
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select id, code, lang, business_id, business_field, model_name, context
+    from soho_mult_lang
+  </select>
+</mapper>
