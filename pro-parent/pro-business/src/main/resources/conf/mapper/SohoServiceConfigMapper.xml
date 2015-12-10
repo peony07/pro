@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.sc.pro.business.dao.SohoServiceConfigMapper" >
-  <resultMap id="BaseResultMap" type="com.sc.pro.business.model.SohoServiceConfigVO" >
+  <resultMap id="BaseResultMap" type="com.sc.pro.api.modelname.vo.SohoServiceConfigVO" >
     <id column="id" property="id" jdbcType="VARCHAR" />
     <result column="service_code" property="serviceCode" jdbcType="VARCHAR" />
     <result column="service_name" property="serviceName" jdbcType="VARCHAR" />
@@ -19,7 +19,7 @@
     delete from soho_service_config
     where id = #{id,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.sc.pro.business.model.SohoServiceConfigVO" >
+  <insert id="insert" parameterType="com.sc.pro.api.modelname.vo.SohoServiceConfigVO" >
     insert into soho_service_config (id, service_code, service_name, 
       service_type, service_auth, service_enabled, 
       service_param, return_type, read_only, 
@@ -31,7 +31,7 @@
       #{subQuery,jdbcType=VARCHAR}, #{multLangField,jdbcType=VARCHAR}, #{serviceContent,jdbcType=LONGVARCHAR}
       )
   </insert>
-  <update id="updateByPrimaryKey" parameterType="com.sc.pro.business.model.SohoServiceConfigVO" >
+  <update id="updateByPrimaryKey" parameterType="com.sc.pro.api.modelname.vo.SohoServiceConfigVO" >
     update soho_service_config
     set service_code = #{serviceCode,jdbcType=VARCHAR},
       service_name = #{serviceName,jdbcType=VARCHAR},
@@ -58,7 +58,7 @@
     from soho_service_config
   </select>
   
-    <select id="findServerByCode" parameterType="com.sc.pro.business.model.SohoServiceConfigVO" resultMap="BaseResultMap" >
+    <select id="findServerByCode" parameterType="com.sc.pro.api.modelname.vo.SohoServiceConfigVO" resultMap="BaseResultMap" >
     select id, service_code, service_name, service_type, service_auth, service_enabled, 
     service_param, return_type, read_only, sub_query, mult_lang_field, service_content
     from soho_service_config where service_code=#{serviceCode} and service_auth=#{serviceAuth}

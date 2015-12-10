@@ -1,7 +1,8 @@
 package com.sc.pro.business.dao;
 
-import com.sc.pro.business.model.SohoMultLangVO;
 import java.util.List;
+
+import com.sc.pro.api.modelname.vo.SohoMultLangVO;
 
 public interface SohoMultLangMapper {
     int deleteByPrimaryKey(String id);

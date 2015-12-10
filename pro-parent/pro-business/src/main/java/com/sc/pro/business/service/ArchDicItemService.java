@@ -4,8 +4,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.sc.pro.api.modelname.vo.ArchDicItemVO;
 import com.sc.pro.business.dao.ArchDicItemMapper;
-import com.sc.pro.business.model.ArchDicItemVO;
 
 public class ArchDicItemService {
 	

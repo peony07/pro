@@ -24,12 +24,13 @@
 		  <artifactId>pro-api</artifactId>
 		</dependency>
 
+<!-- 
 	<dependency>
 		<groupId>javax.servlet</groupId>
 		<artifactId>javax.servlet-api</artifactId>
 		<scope>provided</scope>
 	</dependency>
-	
+	 -->
        <dependency>  
            <groupId>org.springframework</groupId>  
            <artifactId>spring-webmvc</artifactId>  
@@ -39,46 +40,18 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-aspects</artifactId>
         </dependency>
-
-      <!-- commons -->
-      <dependency>
-          <groupId>commons-logging</groupId>
-          <artifactId>commons-logging</artifactId>
-      </dependency>
-      <dependency>
-          <groupId>commons-io</groupId>
-          <artifactId>commons-io</artifactId>
-      </dependency>
-      <!-- log4j -->
-      <dependency>
-          <groupId>log4j</groupId>
-          <artifactId>log4j</artifactId>
-      </dependency>
-      <dependency>
-          <groupId>org.slf4j</groupId>
-          <artifactId>slf4j-api</artifactId>
-      </dependency>
-      <dependency>
-          <groupId>org.slf4j</groupId>
-          <artifactId>slf4j-log4j12</artifactId>
-      </dependency>
-
-      <dependency>
-          <groupId>net.sf.json-lib</groupId>
-          <artifactId>json-lib</artifactId>
-          <classifier>jdk15</classifier>
-      </dependency>
-
+        
         <dependency>
 			<groupId>jstl</groupId>
 			<artifactId>jstl</artifactId>
 		</dependency>
 	
+	<!-- sitemesh
 		<dependency>
 			<groupId>opensymphony</groupId>
 			<artifactId>sitemesh</artifactId>
 		</dependency>
- 
+ 	 -->
   </dependencies>
   
   <build>

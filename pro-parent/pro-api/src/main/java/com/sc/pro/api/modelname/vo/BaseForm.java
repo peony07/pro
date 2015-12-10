@@ -1,11 +1,9 @@
-package com.sc.pro.business.model;
+package com.sc.pro.api.modelname.vo;
 
-import com.sc.pro.common.util.COMMON;
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.ToStringBuilder;
-import org.apache.commons.lang.builder.ToStringStyle;
+import java.io.Serializable;
 
-public class BaseForm {
+
+public class BaseForm implements Serializable  {
 
 	private static final long serialVersionUID = 1L;
 
@@ -135,12 +133,6 @@ public class BaseForm {
 		this.orderCol = orderCol;
 	}
 
-	public String getOrder() {
-		if (COMMON.isEmpty(order)) {
-			return " ASC ";
-		}
-		return order;
-	}
 
 	public void setOrder(String order) {
 		this.order = order;
@@ -169,12 +161,5 @@ public class BaseForm {
 	public void setReadonly(boolean readonly) {
 		this.readonly = readonly;
 	}
-
-	public String toString() {
-		return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-	}
-
-	public boolean equals(Object o) {
-		return EqualsBuilder.reflectionEquals(this, o);
-	}
+ 
 }

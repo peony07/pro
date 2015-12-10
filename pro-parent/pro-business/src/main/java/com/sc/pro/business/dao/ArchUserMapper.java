@@ -2,12 +2,12 @@ package com.sc.pro.business.dao;
 
 import java.util.List;
 
-import com.sc.pro.business.model.ArchUserVO;
+import com.sc.pro.api.modelname.vo.ArchUserVO;
 
 
 public interface ArchUserMapper {
     
-	public ArchUserVO getArchUser(ArchUserVO archUserVO);
+	public ArchUserVO getArchUser(String account);
 	
 	public List<ArchUserVO> queryArchUser(ArchUserVO archUserVO);
 	

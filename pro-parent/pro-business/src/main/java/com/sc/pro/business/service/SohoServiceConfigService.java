@@ -4,8 +4,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.sc.pro.api.modelname.vo.SohoServiceConfigVO;
 import com.sc.pro.business.dao.SohoServiceConfigMapper;
-import com.sc.pro.business.model.SohoServiceConfigVO;
 
 public class SohoServiceConfigService {
 	@Autowired

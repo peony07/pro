@@ -1,16 +1,18 @@
 package com.sc.pro.business.common.util;
 
-import com.sc.pro.business.model.SohoMultLangVO;
-import com.sc.pro.business.service.RedisClientTemplate;
-import com.sc.pro.common.util.COMMON;
-import net.sf.json.JSONObject;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
+
+import net.sf.json.JSONObject;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
+import com.sc.pro.api.modelname.vo.SohoMultLangVO;
+import com.sc.pro.business.service.RedisClientTemplate;
+import com.sc.pro.common.util.COMMON;
 
 public class MultLangUtil {
 	private static Log _log = LogFactory.getLog(MultLangUtil.class);

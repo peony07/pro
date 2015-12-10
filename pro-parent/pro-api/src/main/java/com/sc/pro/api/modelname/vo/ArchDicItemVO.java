@@ -1,8 +1,9 @@
-package com.sc.pro.business.model;
+package com.sc.pro.api.modelname.vo;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class ArchDicItemVO {
+public class ArchDicItemVO implements Serializable {
     private String rid;
 
     private String kind;

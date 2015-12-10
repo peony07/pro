@@ -5,17 +5,17 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-import com.sc.pro.business.model.ArchUserVO;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.sc.pro.api.modelname.vo.ArchDicItemVO;
+import com.sc.pro.api.modelname.vo.ArchUserVO;
+import com.sc.pro.api.modelname.vo.SohoServiceConfigVO;
 import com.sc.pro.business.common.util.Constants;
 import com.sc.pro.business.common.util.SpringContextUtil;
-import com.sc.pro.business.model.ArchDicItemVO;
-import com.sc.pro.business.model.SohoServiceConfigVO;
 import com.sc.pro.business.service.ArchDicItemService;
 import com.sc.pro.business.service.ArchUserService;
 import com.sc.pro.business.service.DataBaseUtilService;
@@ -36,8 +36,7 @@ public class test {
 	public static void main(String[] args) {
 		ArchUserService archUserService = (ArchUserService) SpringContextUtil.getBean("archUserService");
 		ArchUserVO archUserVO = new ArchUserVO();
-		archUserVO.setAccount("admin");
-		archUserVO = archUserService.getArchUser(archUserVO);
+		archUserVO = archUserService.getArchUser("admin");
 		_log.info(archUserVO.getUserName());
 
 		archUserVO = new ArchUserVO();

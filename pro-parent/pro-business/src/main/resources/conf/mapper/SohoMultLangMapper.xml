@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.sc.pro.business.dao.SohoMultLangMapper" >
-  <resultMap id="BaseResultMap" type="com.sc.pro.business.model.SohoMultLangVO" >
+  <resultMap id="BaseResultMap" type="com.sc.pro.api.modelname.vo.SohoMultLangVO" >
     <id column="id" property="id" jdbcType="VARCHAR" />
     <result column="code" property="code" jdbcType="VARCHAR" />
     <result column="lang" property="lang" jdbcType="VARCHAR" />
@@ -14,7 +14,7 @@
     delete from soho_mult_lang
     where id = #{id,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.sc.pro.business.model.SohoMultLangVO" >
+  <insert id="insert" parameterType="com.sc.pro.api.modelname.vo.SohoMultLangVO" >
     insert into soho_mult_lang (id, code, lang, 
       business_id, business_field, model_name, 
       context)
@@ -22,7 +22,7 @@
       #{businessId,jdbcType=VARCHAR}, #{businessField,jdbcType=VARCHAR}, #{modelName,jdbcType=VARCHAR}, 
       #{context,jdbcType=LONGVARCHAR})
   </insert>
-  <update id="updateByPrimaryKey" parameterType="com.sc.pro.business.model.SohoMultLangVO" >
+  <update id="updateByPrimaryKey" parameterType="com.sc.pro.api.modelname.vo.SohoMultLangVO" >
     update soho_mult_lang
     set code = #{code,jdbcType=VARCHAR},
       lang = #{lang,jdbcType=VARCHAR},

@@ -15,13 +15,7 @@
     http://www.springframework.org/schema/aop
     http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
 	">
-	
-    
-<!--     <bean id="SpringContextUtil " class="com.sc.pro.business.common.util.SpringContextUtil" /> -->
 
-	<!-- <import resource="classpath:conf/spring/spring-config-business.xml"/> -->
-	<!-- <import resource="classpath:conf/spring/spring-config-interface.xml"/> -->
-
-      <import resource="classpath:conf/spring/spring-dubbo-rest-consumer.xml" />  
+	<import resource="classpath:conf/spring/spring-dubbo-rest-consumer.xml" /> 
 
 </beans>

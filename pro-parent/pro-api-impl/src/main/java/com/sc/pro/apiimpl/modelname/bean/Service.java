@@ -1,7 +1,6 @@
 package com.sc.pro.apiimpl.modelname.bean;
 
 import java.util.Arrays;
-
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -10,10 +9,10 @@ import java.util.Map;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
+import com.sc.pro.api.modelname.vo.SohoServiceConfigVO;
 import com.sc.pro.business.common.util.Constants;
 import com.sc.pro.business.common.util.MultLangUtil;
 import com.sc.pro.business.common.util.SpringContextUtil;
-import com.sc.pro.business.model.SohoServiceConfigVO;
 import com.sc.pro.business.service.SohoServiceConfigService;
 import com.sc.pro.common.util.COMMON;
 

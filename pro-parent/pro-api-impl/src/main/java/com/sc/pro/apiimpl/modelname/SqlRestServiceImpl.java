@@ -10,6 +10,7 @@ import net.sf.json.JSONObject;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
+import com.sc.pro.api.modelname.vo.SohoServiceConfigVO;
 import com.sc.pro.apiimpl.modelname.bean.RestRequestBean;
 import com.sc.pro.apiimpl.modelname.bean.RestResponseBean;
 import com.sc.pro.apiimpl.modelname.bean.RestService;
@@ -17,7 +18,6 @@ import com.sc.pro.apiimpl.modelname.bean.RestServiceException;
 import com.sc.pro.apiimpl.modelname.bean.Service;
 import com.sc.pro.business.common.util.DataBaseUtil;
 import com.sc.pro.business.common.util.MultLangUtil;
-import com.sc.pro.business.model.SohoServiceConfigVO;
 import com.sc.pro.common.util.COMMON;
 
 public class SqlRestServiceImpl implements RestService {

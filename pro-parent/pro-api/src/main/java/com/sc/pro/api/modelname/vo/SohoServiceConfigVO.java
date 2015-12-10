@@ -1,12 +1,11 @@
-package com.sc.pro.business.model;
+package com.sc.pro.api.modelname.vo;
 
-import com.sc.pro.business.common.util.Constants;
-
+import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
 
-public class SohoServiceConfigVO {
+public class SohoServiceConfigVO implements Serializable  {
 	private String id;
 
 	private String serviceCode;
@@ -102,7 +101,7 @@ public class SohoServiceConfigVO {
 	}
 
 	public boolean isReadOnly() {
-		return Constants.YES.equals(this.readOnly) ? true : false;
+		return "Y".equals(this.readOnly) ? true : false;
 	}
 
 	public void setReadOnly(String readOnly) {

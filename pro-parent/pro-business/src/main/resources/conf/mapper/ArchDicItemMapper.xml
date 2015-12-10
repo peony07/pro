@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.sc.pro.business.dao.ArchDicItemMapper" >
-  <resultMap id="BaseResultMap" type="com.sc.pro.business.model.ArchDicItemVO" >
+  <resultMap id="BaseResultMap" type="com.sc.pro.api.modelname.vo.ArchDicItemVO" >
     <id column="RID" property="rid" jdbcType="VARCHAR" />
     <result column="KIND" property="kind" jdbcType="VARCHAR" />
     <result column="CODE" property="code" jdbcType="VARCHAR" />
@@ -44,7 +44,7 @@
     delete from arch_dic_item
     where RID = #{rid,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.sc.pro.business.model.ArchDicItemVO" >
+  <insert id="insert" parameterType="com.sc.pro.api.modelname.vo.ArchDicItemVO" >
     insert into arch_dic_item (RID, KIND, CODE, 
       PARENT_ID, DETAIL, SPELL, 
       WHOLE_SPELL, REMARK, SORT, 
@@ -72,7 +72,7 @@
       #{custNumber06,jdbcType=BIGINT}, #{custNumber07,jdbcType=BIGINT}, #{custDate01,jdbcType=TIMESTAMP}, 
       #{custDate02,jdbcType=TIMESTAMP})
   </insert>
-  <update id="updateByPrimaryKey" parameterType="com.sc.pro.business.model.ArchDicItemVO" >
+  <update id="updateByPrimaryKey" parameterType="com.sc.pro.api.modelname.vo.ArchDicItemVO" >
     update arch_dic_item
     set KIND = #{kind,jdbcType=VARCHAR},
       CODE = #{code,jdbcType=VARCHAR},
@@ -132,7 +132,7 @@
     from arch_dic_item
   </select>
   
-  <select id="getList"  parameterType="com.sc.pro.business.model.ArchDicItemVO"  resultMap="BaseResultMap" >
+  <select id="getList"  parameterType="com.sc.pro.api.modelname.vo.ArchDicItemVO"  resultMap="BaseResultMap" >
     select RID, KIND, CODE, PARENT_ID, DETAIL, SPELL, WHOLE_SPELL, REMARK, SORT, FLAG, 
     CREATED_BY, LAST_UPDATED_BY, CREATED_DATE, LAST_UPDATED_DATE, CUST_TEXT01, CUST_TEXT02, 
     CUST_TEXT03, CUST_TEXT04, CUST_TEXT05, CUST_TEXT06, CUST_TEXT07, CUST_TEXT08, CUST_TEXT09, 

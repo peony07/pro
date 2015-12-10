@@ -2,7 +2,7 @@ package com.sc.pro.apiimpl.modelname.bean;
 
 import net.sf.json.JSONObject;
 
-import com.sc.pro.business.model.SohoServiceConfigVO;
+import com.sc.pro.api.modelname.vo.SohoServiceConfigVO;
 
 public class RestRequestBean {
 

@@ -1,6 +1,6 @@
 package com.sc.pro.apiimpl.modelname;
 
-import net.sf.json.JSONObject;
+import java.util.List;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.sc.pro.api.modelname.ArchUserSrv;
-import com.sc.pro.business.model.ArchUserVO;
+import com.sc.pro.api.modelname.vo.ArchUserVO;
 import com.sc.pro.business.service.ArchUserService;
 
 /**
@@ -21,18 +21,23 @@ public class ArchUserSrvImpl implements ArchUserSrv {
 	@Autowired
 	private ArchUserService archUserService;
 
-	public String getArchUser(String json) {
-		_log.info(json);
-		JSONObject inputValue = JSONObject.fromObject(json);
-		ArchUserVO archUserVO = (ArchUserVO) JSONObject.toBean(inputValue, ArchUserVO.class);
-		return JSONObject.fromObject(archUserService.getArchUser(archUserVO)).toString();
+//	public String getArchUser(ArchUserVO archUserVO ) {
+//		_log.info(json);
+//		JSONObject inputValue = JSONObject.fromObject(json);
+//		ArchUserVO archUserVO = (ArchUserVO) JSONObject.toBean(inputValue, ArchUserVO.class);
+//		return JSONObject.fromObject(archUserService.getArchUser(archUserVO)).toString();
+//	}
+
+	public List<ArchUserVO> queryArchUser(ArchUserVO archUserVO ) {
+//		_log.info(json);
+//		JSONObject inputValue = JSONObject.fromObject(json);
+//		ArchUserVO archUserVO = (ArchUserVO) JSONObject.toBean(inputValue, ArchUserVO.class);
+		return archUserService.queryArchUser(archUserVO);
 	}
 
-	public String queryArchUser(String json) {
-		_log.info(json);
-		JSONObject inputValue = JSONObject.fromObject(json);
-		ArchUserVO archUserVO = (ArchUserVO) JSONObject.toBean(inputValue, ArchUserVO.class);
-		return JSONObject.fromObject(archUserService.queryArchUser(archUserVO)).toString();
+	@Override
+	public ArchUserVO findUserByAccount(String account) {
+		return archUserService.getArchUser(account);
 	}
 
 }

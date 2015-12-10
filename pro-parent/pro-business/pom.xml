@@ -23,6 +23,11 @@
 			<groupId>com.sc.project</groupId>
 			<artifactId>pro-common</artifactId>
 		</dependency>
+		
+		<dependency>
+			<groupId>com.sc.project</groupId>
+			<artifactId>pro-api</artifactId>
+		</dependency>
 	 
         <dependency>
 			<groupId>org.springframework</groupId>
@@ -77,17 +82,6 @@
 	    <dependency>
 			<groupId>redis.clients</groupId>
 			<artifactId>jedis</artifactId>
-		</dependency>
-		
-		<dependency>
-			<groupId>org.codehaus.jackson</groupId>
-			<artifactId>jackson-core-asl</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>net.sf.json-lib</groupId>
-			<artifactId>json-lib</artifactId>
-			<classifier>jdk15</classifier>
 		</dependency>
 		
 		<!--mysql-->

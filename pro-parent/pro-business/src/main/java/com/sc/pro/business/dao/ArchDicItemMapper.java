@@ -1,7 +1,8 @@
 package com.sc.pro.business.dao;
 
-import com.sc.pro.business.model.ArchDicItemVO;
 import java.util.List;
+
+import com.sc.pro.api.modelname.vo.ArchDicItemVO;
 
 public interface ArchDicItemMapper {
 	public int deleteByPrimaryKey(String rid);

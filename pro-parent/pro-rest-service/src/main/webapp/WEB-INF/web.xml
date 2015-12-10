@@ -3,14 +3,12 @@
 		 xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		 xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
 	
-	<!-- 读取spring配置文件 -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>classpath:conf/spring/spring-config-service-app.xml</param-value>
-		<!--jar包里的配置文件不能用通配符找到，必须写全名-->
+		<param-value>classpath:conf/spring/spring-config-service-applicationContext.xml</param-value>
 	</context-param>
 	
-		<!-- Spring字符集过滤器 -->
+    <!-- Spring字符集过滤器 -->
 	<filter>
 		<filter-name>SpringEncodingFilter</filter-name>
 		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
@@ -41,9 +39,24 @@
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
- 
 
-	<!-- Jersey -->
+	<servlet>
+		<servlet-name>dispatcher</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<!-- 读取spring配置文件 -->
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>classpath:conf/spring/spring-config-rest-servlet.xml</param-value>
+			<!--jar包里的配置文件不能用通配符找到，必须写全名-->
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>dispatcher</servlet-name>
+		<url-pattern>/services/*</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Jersey 
 	<servlet>
 		<servlet-name>jersey-servlet</servlet-name>
 		<servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
@@ -57,5 +70,5 @@
 		<servlet-name>jersey-servlet</servlet-name>
 		<url-pattern>/services/*</url-pattern>
 	</servlet-mapping>
-
+	-->
 </web-app>

@@ -1,6 +1,8 @@
-package com.sc.pro.business.model;
+package com.sc.pro.api.modelname.vo;
 
-public class SohoMultLangVO {
+import java.io.Serializable;
+
+public class SohoMultLangVO  implements Serializable {
     private String id;
 
     private String code;

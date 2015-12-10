@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.sc.pro.api.modelname.ArchDicItemSrv;
-import com.sc.pro.api.modelname.ArchDicItemVO;
+import com.sc.pro.api.modelname.vo.ArchDicItemVO;
 import com.sc.pro.business.service.ArchDicItemService;
 
 public class ArchDicItemSrvImpl implements ArchDicItemSrv {

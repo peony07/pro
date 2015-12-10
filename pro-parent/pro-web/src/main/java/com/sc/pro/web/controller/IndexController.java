@@ -22,13 +22,29 @@ public class IndexController {
 		_log.info("/index/");
 		// 创建模型跟视图，用于渲染页面。并且指定要返回的页面为index页面
 		ModelAndView mav = new ModelAndView("index");
-
-		String url = "http://localhost:8009/restservice/services/open/srv/route/";
-		String params = " {\"service_code\":\"SOHO_APP_PROJECT_LIST\",\"language\":\"zh_CN\"}";
+		
+		String serverHost="localhost";
+		String serverPort="8009";
+		
+		String baseUrl="http://"+serverHost+":"+serverPort;
+		String url = baseUrl+"/restservice/services/users/getArchUser/";
+		String params = "{\"account\":\"admin\"}";
 		String result = RestFulClientUtil.sendPost(url, params);
 		_log.info(result);
+		mav.addObject("result1", result);
 
-		mav.addObject("result", result);
+		url = baseUrl+"/restservice/services/registry/getName/";
+		 params = "{\"name\":\"测试中文\"}";
+		 result = RestFulClientUtil.sendPost(url, params);
+		_log.info(result);
+		mav.addObject("result2", result);
+		
+		 url = baseUrl+"/restservice/services/open/srv/route/";
+		 params = "{\"service_code\":\"SOHO_APP_PROJECT_LIST\",\"language\":\"zh_CN\"}";
+		 result = RestFulClientUtil.sendPost(url, params);
+		_log.info(result);
+
+		mav.addObject("result3", result);
 		return mav;
 	}
 
