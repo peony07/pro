@@ -207,4 +207,7 @@
     </aop:config>
 	
 		<import resource="classpath:conf/spring/spring-config-redis.xml"/>
+		
+		
+
 </beans>
